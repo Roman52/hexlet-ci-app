@@ -1,0 +1,10 @@
+name: app-build
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - setup: make setup
+      - test: make test
+      - lint: make lint
